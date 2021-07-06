@@ -16,7 +16,7 @@ html, body {
     height: 15px;
     background-color: blue;
 }
-
+ 
 .pac-dot {
     background-color: green;
     border: 5px solid white;
@@ -24,5 +24,15 @@ html, body {
 }
 
 .wall {
-    background-color: bl
+    background-color: blue;
+}
+
+.power-pellet {
+    background-color: green;
+    border-radius: 7.5px;
+}
+
+.pacman {
+    background-color: yellow;
+    border-radius: 7.5px;
 }
