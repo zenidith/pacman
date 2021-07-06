@@ -13,10 +13,9 @@ html, body {
 
 .grid div {
     width: 15px;
-    height: 15px;
-    background-color: blue;
+    height: 15px;   
 }
- 
+
 .pac-dot {
     background-color: green;
     border: 5px solid white;
@@ -33,6 +32,7 @@ html, body {
 }
 
 .pacman {
-    background-color: yellow;
+    background-color: orange;
     border-radius: 7.5px;
+    border: none;
 }
