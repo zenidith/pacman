@@ -66,5 +66,11 @@ createBoard()
 
 //starting position of pacman 
 let pacmanCurrentIndex = 490
-
 squares[pacmanCurrentIndex].classList.add('pacman')
+
+function control(e) {
+    if (e.keyCode === 40) {
+        console.log('pressed down')
+    }
+}
+document.addEventListener('keyup', control)
