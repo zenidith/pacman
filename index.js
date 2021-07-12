@@ -139,18 +139,22 @@ function pacDotEaten() {
 function powerPelletEaten() {
     //if square pacman is in contains a power pellet
     if (squares[pacmanCurrentIndex].classList.contains('power-pellet')) {
-    //add a score of 10
-    score +=10
-    //change each of the four ghosts to isScared
-    ghosts.forEach(ghost => ghost.isScared = true)
-    //use setTimeout to unscare ghosts after 10 seconds     
-    setTimeout(unScareGhosts, 10000)   
+        //remove power pellet class
+        squares[pacmanCurrentIndex].classList.remove('power-pellet')
+        //add a score of 10
+        score +=10
+        //change each of the four ghosts to isScared
+        ghosts.forEach(ghost => ghost.isScared = true)
+        //use setTimeout to unscare ghosts after 10 seconds   
+        setTimeout(unScareGhosts, 10000)    
     }
 }
 
 function unScareGhosts() {
     ghosts.forEach(ghost => ghost.isScared = false)
 }
+
+
 
 
 class Ghost {
@@ -195,13 +199,19 @@ function moveGhost(ghost) {
         ) {
                 //remove any ghost
         squares[ghost.currentIndex].classList.remove(ghost.className)
-        squares[ghost.currentIndex].classList.remove('ghost')
+        squares[ghost.currentIndex].classList.remove('ghost', 'scared-ghost')
         // //add direction to current Index
         ghost.currentIndex += direction
         // //add ghost class
         squares[ghost.currentIndex].classList.add(ghost.className)  
         squares[ghost.currentIndex].classList.add('ghost')  
         } else direction = directions[Math.floor(Math.random() * directions.length)]
+
+        //if the ghost is currently scared 
+        if (ghost.isScared) {
+            squares[ghost.currentIndex].classList.add('scared-ghost')
+        }
+
 
     }, ghost.speed )
     
